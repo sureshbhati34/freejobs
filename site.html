@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <label for="customRange">Enter Custom Range:</label>
+    <input type="text" id="customRange" placeholder="E.g., A1:B10">
+    <br>
+    <button onclick="exportPDF()">Export PDF</button>
+
+    <script>
+      function exportPDF() {
+        var customRange = document.getElementById('customRange').value;
+        google.script.run.exportCustomRangeAsPDF(customRange);
+        google.script.host.close();
+      }
+    </script>
+  </body>
+</html>
